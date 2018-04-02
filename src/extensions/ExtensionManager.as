@@ -54,10 +54,13 @@ public class ExtensionManager {
 	static public const picoBoardExt:String = 'PicoBoard';
 	static public const wedoExt:String = 'LEGO WeDo';
 	static public const wedo2Ext:String = 'LEGO WeDo 2.0';
+	static public const qulibroExt:String = 'Qulibro Ball Balancing Table';
 
 	// Experimental extensions must be hosted on one of these domains
 	// These should start with '.' to avoid accepting things like 'malicious.not_github.io'
 	static public const allowedDomains:Vector.<String> = new <String>[
+			'kubilayeksioglu.com',
+			'qulibro.com',
 			'.github.io',
 			'.coding.me'
 	];

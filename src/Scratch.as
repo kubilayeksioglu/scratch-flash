@@ -294,6 +294,8 @@ public class Scratch extends Sprite {
 	private function loadGithubURL(urlOrArray:*):void {
 		if (!isExtensionDevMode) return;
 
+		jsThrowError("Loading GH URL");
+
 		var url:String;
 		var urlArray:Array = urlOrArray as Array;
 		if (urlArray) {

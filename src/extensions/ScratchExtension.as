@@ -78,6 +78,17 @@ public class ScratchExtension {
 		this.port = port;
 	}
 
+	public static function Qulibro():ScratchExtension {
+		// Return a descriptor for the Scratch PicoBoard extension.
+		var result:ScratchExtension = new ScratchExtension(ExtensionManager.qulibroExt, 0);
+		result.isInternal = true;
+		result.javascriptURL = "http://kubilayeksioglu.com/data/qulibro.js";
+		result.thumbnailMD5 = '82318df0f682b1de33f64da8726660dc.png';
+		result.url = 'http://qulibro.com';
+		result.tags = ['hardware'];
+		return result;
+	}
+
 	public static function PicoBoard():ScratchExtension {
 		// Return a descriptor for the Scratch PicoBoard extension.
 		var result:ScratchExtension = new ScratchExtension(ExtensionManager.picoBoardExt, 0);

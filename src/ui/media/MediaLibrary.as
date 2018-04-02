@@ -329,7 +329,8 @@ spriteFeaturesFilter.visible = false; // disable features filter for now
 		const extList:Array = [
 			ScratchExtension.PicoBoard(),
 			ScratchExtension.WeDo(),
-			ScratchExtension.WeDo2()
+			ScratchExtension.WeDo2(),
+			ScratchExtension.Qulibro()
 		];
 		allItems = [];
 		for each (var ext:ScratchExtension in extList) {
