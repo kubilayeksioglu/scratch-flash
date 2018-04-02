@@ -72,14 +72,14 @@ public class TopBarPart extends UIPart {
 		addTextButtons();
 		addToolButtons();
 		if (Scratch.app.isExtensionDevMode) {
-			addChild(logoButton = new IconButton(app.logoButtonPressed, Resources.createBmp('scratchxlogo')));
-			const desiredButtonHeight:Number = 20;
-			logoButton.scaleX = logoButton.scaleY = 1;
-			var scale:Number = desiredButtonHeight / logoButton.height;
-			logoButton.scaleX = logoButton.scaleY = scale;
+			// addChild(logoButton = new IconButton(app.logoButtonPressed, Resources.createBmp('scratchxlogo')));
+			// const desiredButtonHeight:Number = 1;
+			// logoButton.scaleX = logoButton.scaleY = 1;
+			// var scale:Number = desiredButtonHeight / logoButton.height;
+			// logoButton.scaleX = logoButton.scaleY = scale;
 
 			addChild(exportButton = new Button('Save Project', function():void { app.exportProjectToFile(); }));
-			addChild(extensionLabel = makeLabel('My Extension', offlineNoticeFormat, 2, 2));
+			addChild(extensionLabel = makeLabel('Qulibro', offlineNoticeFormat, 2, 2));
 
 			var extensionDevManager:ExtensionDevManager = Scratch.app.extensionManager as ExtensionDevManager;
 			if (extensionDevManager) {
@@ -113,6 +113,7 @@ public class TopBarPart extends UIPart {
 	public function setWidthHeight(w:int, h:int):void {
 		this.w = w;
 		this.h = h;
+		this.y = -28;
 		var g:Graphics = shape.graphics;
 		g.clear();
 		g.beginFill(CSS.topBarColor());
@@ -175,7 +176,7 @@ public class TopBarPart extends UIPart {
 
 		if (exportButton) {
 			exportButton.x = nextX - exportButton.width;
-			exportButton.y = h + 5;
+			exportButton.y = h + 4;
 			nextX = exportButton.x - 5;
 		}
 

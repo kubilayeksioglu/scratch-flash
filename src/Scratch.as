@@ -267,6 +267,7 @@ public class Scratch extends Sprite {
 				if (index > 0) newProjectName = newProjectName.slice(0, index);
 				setProjectName(newProjectName);
 			}
+			externalCall("JSprojectLoaded");
 		}
 
 		function handleError(e:ErrorEvent):void {
@@ -819,6 +820,7 @@ public class Scratch extends Sprite {
 	}
 
 	protected function addParts():void {
+// 		CHANGED: @kubilayeksioglu
 		initTopBarPart();
 		stagePart = getStagePart();
 		libraryPart = getLibraryPart();
@@ -851,6 +853,10 @@ public class Scratch extends Sprite {
 	public function setEditMode(newMode:Boolean):void {
 		Menu.removeMenusFrom(stage);
 		editMode = newMode;
+
+		// Call JSsetEditMode in browser, notify for the edit mode
+		externalCall("JSsetEditMode", null, newMode);
+
 		if (editMode) {
 			interp.showAllRunFeedback();
 			hide(playerBG);
